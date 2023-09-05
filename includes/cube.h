@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:21:48 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/05 14:40:05 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/05 14:55:29 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <stdio.h>
 #include <mlx.h>
+#include "../libraries/42_libft/include/libft.h"
 
 # define mapWidth 24
 # define mapHeight 24
@@ -56,7 +57,7 @@ typedef struct s_player{
 }	t_player;
  
 typedef struct s_game{
-	t_player	player;
+	t_player	*player;
 	int			is_playing;
 	double		time;
 	double		old_time;
