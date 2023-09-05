@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:21:48 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/05 14:55:29 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/05 15:15:52 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@
 # define mapHeight 24
 # define screenWidth 640
 # define screenHeight 480
+
+# define startPosX 13
+# define startPosY 13
 
 int worldMap[mapWidth][mapHeight]=
 {
