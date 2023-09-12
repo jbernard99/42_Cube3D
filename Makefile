@@ -6,7 +6,7 @@
 #    By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 04:45:18 by jbernard          #+#    #+#              #
-#    Updated: 2023/09/05 14:38:56 by jbernard         ###   ########.fr        #
+#    Updated: 2023/09/09 21:30:27 by jbernard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,8 @@ NAME = Cube3D
 SRC_DIR = src/
 
 MAIN_DIR = $(SRC_DIR)/main
+GAME_DIR = $(SRC_DIR)/game
+PLYR_DIR = $(SRC_DIR)/player
 
 INC_DIR = includes/
 OBJ_DIR = obj/
@@ -31,14 +33,20 @@ LIBFT_DIR = ./libraries/42_libft
 
 # Files
 MAIN_FILES = 	main.c
+GAME_FILES =	game.c
+PLYR_FILES = 	player.c
 				
 
-OBJ_FILES = $(MAIN_FILES:%.c=$(OBJ_DIR)%.o)
+OBJ_FILES = $(MAIN_FILES:%.c=$(OBJ_DIR)%.o) \
+			$(GAME_FILES:%.c=$(OBJ_DIR)%.o) \
+			$(PLYR_FILES:%.c=$(OBJ_DIR)%.o)
 
-LIB_FILES = -L$(LIBFT_DIR) -lft -L/usr/local -lmlx
+LIB_FILES = -L$(LIBFT_DIR) -lft -L/usr/local -lmlx -lX11 -lXext
 
 VPATH =	$(SRC_DIR) 		\
-		$(MAIN_DIR)
+		$(MAIN_DIR)		\
+		$(GAME_DIR)		\
+		$(PLYR_DIR)
 
 # Build rule
 all: $(NAME)
