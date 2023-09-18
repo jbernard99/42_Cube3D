@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:21:48 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/09 21:29:19 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/18 13:36:16 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUBE_H
 # define CUBE_H
 
-#include <stdio.h>
-#include <mlx.h>
-#include "../libraries/42_libft/include/libft.h"
+# include <stdio.h>
+# include "mlx.h"
+# include "../libraries/42_libft/include/libft.h"
 
 # define mapWidth 24
 # define mapHeight 24

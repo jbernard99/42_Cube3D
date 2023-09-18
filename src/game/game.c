@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   game.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 21:25:17 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/09 21:27:12 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/18 13:34:43 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube.h"
+#include "../../includes/cube.h"
 
 t_game *init_game(t_game *game, void *screen, void *mlx)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:29:04 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/09 21:25:43 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/18 13:34:52 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube.h"
+#include "../../includes/cube.h"
 
 // MLX prototypes
 //void *mlx_new_window(void *mlx_ptr, int size_x, int size_y, char *title);

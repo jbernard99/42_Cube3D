@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   player.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 21:24:28 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/09 21:27:12 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/18 13:34:57 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cube.h"
+#include "../../includes/cube.h"
 
 t_player *init_player(t_player *player)
 {
