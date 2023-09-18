@@ -6,7 +6,7 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:53:27 by smayrand          #+#    #+#             */
-/*   Updated: 2023/09/18 16:02:58 by smayrand         ###   ########.fr       */
+/*   Updated: 2023/09/18 16:20:48 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 void	move_forward(t_game *game)
 {
-	
+	(void)game;
 }
 
 void	move_backward(t_game *game)
 {
-	
+	(void)game;
 }
 
 void	move_left(t_game *game)
 {
-	
+	(void)game;
 }
 
 void	move_right(t_game *game)
 {
-	
+	(void)game;
 }
 
 

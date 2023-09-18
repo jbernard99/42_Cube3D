@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:29:04 by jbernard          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2023/09/18 16:15:21 by smayrand         ###   ########.fr       */
-=======
-/*   Updated: 2023/09/18 15:54:49 by jbernard         ###   ########.fr       */
->>>>>>> 372e371e565bc226282071eb56fec6bc0082d9cb
+/*   Updated: 2023/09/18 17:13:42 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +17,22 @@
 //int mlx_clear_window(void *mlx_ptr, void *win_ptr);
 //int mlx_destroy_window(void *mlx_ptr, void *win_ptr);
 
-int main(void)
+int main(int argc, char **argv)
 {
 	t_game	game;
 
-	game.mlx = mlx_init();
-	game.screen = mlx_new_window(game.mlx, screenWidth, screenHeight, "Forza Horizon 6");
-//	game = init_game(&game, game.screen, game.mlx);
-	mlx_hook(game.screen, 2, 1L << 0, key_hook, &game);
-	mlx_hook(game.screen, ON_DESTROY, 0, ft_exit, &game);
-	mlx_loop(game.mlx);
-	return (0);
+	if (argc != 2)
+	{
+		game.mlx = mlx_init();
+		game.screen = mlx_new_window(game.mlx, sW, sH, "Forza Horizon 6");
+		init_game(&game, game.screen, game.mlx);
+		mlx_hook(game.screen, 2, 1L << 0, key_hook, &game);
+		mlx_hook(game.screen, ON_DESTROY, 0, ft_exit, &game);
+		mlx_loop(game.mlx);
+		return (0);
+	}
+	else
+	{
+		printf("%s\n", "Error: Invalid number of arguments");
+	}
 }
