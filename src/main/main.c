@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:29:04 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/18 16:24:26 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/18 17:22:18 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,22 @@
 //int mlx_clear_window(void *mlx_ptr, void *win_ptr);
 //int mlx_destroy_window(void *mlx_ptr, void *win_ptr);
 
-int main(void)
+int main(int argc, char **argv)
 {
-	t_game	*game;
-	void	*mlx;
-	void	*screen;
+	t_game	game;
 
-	game = NULL;
-	mlx = mlx_init();
-	screen = mlx_new_window(mlx, screenWidth, screenHeight, "Forza Horizon 6");
-	game = init_game(game, screen, mlx);
-	mlx_loop(mlx);
-	return (0);
+	if (argc != 2)
+	{
+		game.mlx = mlx_init();
+		game.screen = mlx_new_window(game.mlx, sW, sH, "Forza Horizon 6");
+		init_game(&game, game.screen, game.mlx);
+		mlx_hook(game.screen, 2, 1L << 0, key_hook, &game);
+		mlx_hook(game.screen, ON_DESTROY, 0, ft_exit, &game);
+		mlx_loop(game.mlx);
+		return (0);
+	}
+	else
+	{
+		printf("%s\n", "Error: Invalid number of arguments");
+	}
 }

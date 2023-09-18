@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+         #
+#    By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 04:45:18 by jbernard          #+#    #+#              #
-#    Updated: 2023/09/18 15:47:26 by jbernard         ###   ########.fr        #
+#    Updated: 2023/09/18 17:16:32 by smayrand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,8 @@ LIBFT_DIR = ./libraries/42_libft
 
 # Files
 MAIN_FILES = 	main.c
-GAME_FILES =	game.c
-PLYR_FILES = 	player.c
+GAME_FILES =	game.c exit.c read_map.c
+PLYR_FILES = 	player.c key_hook.c
 				
 
 OBJ_FILES = $(MAIN_FILES:%.c=$(OBJ_DIR)%.o) \
