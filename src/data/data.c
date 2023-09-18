@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 16:13:30 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/18 17:00:02 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/18 17:23:12 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_data *init_data(t_data *data, void *mlx)
 {
 	data = ft_calloc(1, sizeof(t_data));
-	data->img = mlx_new_image(mlx, screenWidth, screenHeight);
+	data->img = mlx_new_image(mlx, sW, sH);
 	data->addr = mlx_get_data_addr(data->img, data->bits_per_pixel, data->line_length, data->endian);
 
 	return (data);

@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:21:48 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/18 17:22:11 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/18 17:27:45 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ typedef struct s_player{
 
 typedef struct s_data {
 	void	*img;
-	void	*temp_img;
 	char	*addr;
 	int		bits_per_pixel;
 	int		line_length;
