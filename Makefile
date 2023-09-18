@@ -6,7 +6,7 @@
 #    By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 04:45:18 by jbernard          #+#    #+#              #
-#    Updated: 2023/09/09 21:30:27 by jbernard         ###   ########.fr        #
+#    Updated: 2023/09/18 15:47:26 by jbernard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ OBJ_FILES = $(MAIN_FILES:%.c=$(OBJ_DIR)%.o) \
 			$(GAME_FILES:%.c=$(OBJ_DIR)%.o) \
 			$(PLYR_FILES:%.c=$(OBJ_DIR)%.o)
 
-LIB_FILES = -L$(LIBFT_DIR) -lft -L/usr/local -lmlx -lX11 -lXext
+LIB_FILES = -L$(LIBFT_DIR) -lft -Llibraries/42_libft -lmlx -Llibraries/mlx -framework OpenGL -framework AppKit
 
 VPATH =	$(SRC_DIR) 		\
 		$(MAIN_DIR)		\
@@ -61,7 +61,7 @@ $(OBJ_DIR)%.o: %.c | $(OBJ_DIR)
 	@ printf "$(GREEN)- ⚡⚡⚡ -> Compiling $(PURPLE)$(notdir $@)$(GREEN) using $(PURPLE)$(notdir $<)$(GREEN)...                                                                             \r$(RESET)"
 	@ $(CC) $(CFLAGS) -g -gdwarf-4 -I$(INC_DIR) -c $< -o $@
 
-$(OBJ_DIR):
+obj:
 	@ mkdir -p $(OBJ_DIR)
 
 #Management Rules
