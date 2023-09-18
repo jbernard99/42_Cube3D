@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   image.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 14:29:04 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/18 16:24:26 by jbernard         ###   ########.fr       */
+/*   Created: 2023/09/18 17:00:11 by jbernard          #+#    #+#             */
+/*   Updated: 2023/09/18 17:16:51 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cube.h"
 
-// MLX prototypes
-//void *mlx_new_window(void *mlx_ptr, int size_x, int size_y, char *title);
-//int mlx_clear_window(void *mlx_ptr, void *win_ptr);
-//int mlx_destroy_window(void *mlx_ptr, void *win_ptr);
-
-int main(void)
+void swap_img(t_data *data)
 {
-	t_game	*game;
-	void	*mlx;
-	void	*screen;
+	void	*tmp;
 
-	game = NULL;
-	mlx = mlx_init();
-	screen = mlx_new_window(mlx, screenWidth, screenHeight, "Forza Horizon 6");
-	game = init_game(game, screen, mlx);
-	mlx_loop(mlx);
-	return (0);
+	tmp = data->img;
+	data->img = data->temp_img;
+	data->temp_img = tmp;
+}
+
+void clear_img(t_data *data, void *mlx)
+{
+	free(data->temp_img);
+	data->temp_img = mlx_new_image(mlx, sW, sH);
+	return	
 }

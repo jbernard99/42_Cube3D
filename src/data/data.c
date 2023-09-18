@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   data.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 14:29:04 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/18 16:24:26 by jbernard         ###   ########.fr       */
+/*   Created: 2023/09/18 16:13:30 by jbernard          #+#    #+#             */
+/*   Updated: 2023/09/18 17:00:02 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cube.h"
 
-// MLX prototypes
-//void *mlx_new_window(void *mlx_ptr, int size_x, int size_y, char *title);
-//int mlx_clear_window(void *mlx_ptr, void *win_ptr);
-//int mlx_destroy_window(void *mlx_ptr, void *win_ptr);
-
-int main(void)
+t_data *init_data(t_data *data, void *mlx)
 {
-	t_game	*game;
-	void	*mlx;
-	void	*screen;
+	data = ft_calloc(1, sizeof(t_data));
+	data->img = mlx_new_image(mlx, screenWidth, screenHeight);
+	data->addr = mlx_get_data_addr(data->img, data->bits_per_pixel, data->line_length, data->endian);
 
-	game = NULL;
-	mlx = mlx_init();
-	screen = mlx_new_window(mlx, screenWidth, screenHeight, "Forza Horizon 6");
-	game = init_game(game, screen, mlx);
-	mlx_loop(mlx);
-	return (0);
+	return (data);
+}
+
+void	putpixel(t_data *data, int x, int y, int color)
+{
+	char	*dst;
+
+	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
+	*(unsigned int*)dst = color;
 }
