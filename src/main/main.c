@@ -6,7 +6,7 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:29:04 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/18 13:34:52 by smayrand         ###   ########.fr       */
+/*   Updated: 2023/09/18 16:15:21 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,13 @@
 
 int main(void)
 {
-	t_game	*game;
-	void	*mlx;
-	void	*screen;
+	t_game	game;
 
-	game = NULL;
-	mlx = mlx_init();
-	screen = mlx_new_window(mlx, screenWidth, screenHeight, "Forza Horizon 6");
-	game = init_game(game, screen, mlx);
-	mlx_loop(mlx);
+	game.mlx = mlx_init();
+	game.screen = mlx_new_window(game.mlx, screenWidth, screenHeight, "Forza Horizon 6");
+//	game = init_game(&game, game.screen, game.mlx);
+	mlx_hook(game.screen, 2, 1L << 0, key_hook, &game);
+	mlx_hook(game.screen, ON_DESTROY, 0, ft_exit, &game);
+	mlx_loop(game.mlx);
 	return (0);
 }
