@@ -6,7 +6,7 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:21:48 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/18 16:04:13 by smayrand         ###   ########.fr       */
+/*   Updated: 2023/09/18 17:13:16 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 # define mapWidth 24
 # define mapHeight 24
-# define screenWidth 640
-# define screenHeight 480
+# define sW 640
+# define sH 480
 
 # define startPosX 13
 # define startPosY 13
