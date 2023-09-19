@@ -6,7 +6,7 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:21:48 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/19 13:31:37 by smayrand         ###   ########.fr       */
+/*   Updated: 2023/09/19 14:37:37 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,6 @@ t_player	*init_player(t_player *player);
 t_frame 	*init_frame(t_game *game, t_frame *frame, void *mlx);
 
 // key_hook.c
-int			key_hook(int keycode, t_game *input);
+void		key_hook(mlx_key_data_t keycode, void *input);
 
 #endif
