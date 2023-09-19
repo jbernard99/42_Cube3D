@@ -6,7 +6,7 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 15:57:39 by smayrand          #+#    #+#             */
-/*   Updated: 2023/09/19 13:19:57 by smayrand         ###   ########.fr       */
+/*   Updated: 2023/09/19 13:44:15 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int	ft_exit(t_game *input, char *msg)
 {
 	printf("%s", msg);
-//	mlx_destroy_window(input->mlx, input->screen);
-	ft_freetabstr(input->mlx);
+	mlx_terminate(input->mlx);
+//	ft_freetabstr(input->mlx);
 	exit(0);
 }

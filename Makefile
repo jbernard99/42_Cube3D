@@ -6,7 +6,7 @@
 #    By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 04:45:18 by jbernard          #+#    #+#              #
-#    Updated: 2023/09/19 13:18:02 by smayrand         ###   ########.fr        #
+#    Updated: 2023/09/19 13:50:59 by smayrand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,7 +77,6 @@ obj:
 clean:
 	@ rm -rf $(OBJ_DIR)
 	@ $(MAKE) -C $(LIBFT_DIR) clean
-	@rm -rf $(LIBMLX)/build
 
 fclean: clean
 	@ rm -f $(NAME)
