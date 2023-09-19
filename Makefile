@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+         #
+#    By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 04:45:18 by jbernard          #+#    #+#              #
-#    Updated: 2023/09/18 17:16:32 by smayrand         ###   ########.fr        #
+#    Updated: 2023/09/19 10:02:43 by jbernard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC_DIR = src/
 MAIN_DIR = $(SRC_DIR)/main
 GAME_DIR = $(SRC_DIR)/game
 PLYR_DIR = $(SRC_DIR)/player
+DATA_DIR = $(DATA_DIR)/data
 
 INC_DIR = includes/
 OBJ_DIR = obj/
@@ -35,6 +36,7 @@ LIBFT_DIR = ./libraries/42_libft
 MAIN_FILES = 	main.c
 GAME_FILES =	game.c exit.c read_map.c
 PLYR_FILES = 	player.c key_hook.c
+DATA_FILES = 	data.c image.c
 				
 
 OBJ_FILES = $(MAIN_FILES:%.c=$(OBJ_DIR)%.o) \
