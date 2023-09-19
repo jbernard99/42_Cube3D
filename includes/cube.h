@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:21:48 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/18 17:27:45 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/19 11:12:28 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,24 +56,31 @@ typedef struct s_player{
 	double		speed;
 }	t_player;
 
-typedef struct s_data {
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-	int		offset;
-}	t_data;
+typedef struct s_settings {
+	int			bits_per_pixel;
+	int			line_length;
+	int			endian;
+	int			offset;
+}	t_settings;
+
+typedef struct s_frame {
+	void		*img;
+	char		*addr;
+	t_settings 	*s;
+}	t_frame;
  
 typedef struct s_game{
 	t_player	*player;
-	t_data		*data;
+	t_settings	*s;
+	t_frame		*curr_frame;
+	t_frame		*pre_frames[4];
 	void		*mlx;
 	void		*screen;
 	int			is_playing;
 	double		time;
 	double		old_time;
 }	t_game;
+
 // exit.c
 int			ft_exit(t_game *input, char *msg);
 
@@ -83,9 +90,8 @@ t_game		*init_game(t_game *game, void *screen, void *mlx);
 // player.c
 t_player	*init_player(t_player *player);
 
-// data.c
-t_data 		*init_data(t_data *data, void *mlx);
-
+// frame.c
+t_frame 	*init_frame(t_game *game, t_frame *frame, void *mlx);
 
 // key_hook.c
 int			key_hook(int keycode, t_game *input);

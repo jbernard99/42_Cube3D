@@ -6,7 +6,7 @@
 #    By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 04:45:18 by jbernard          #+#    #+#              #
-#    Updated: 2023/09/19 10:02:43 by jbernard         ###   ########.fr        #
+#    Updated: 2023/09/19 11:15:17 by jbernard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRC_DIR = src/
 MAIN_DIR = $(SRC_DIR)/main
 GAME_DIR = $(SRC_DIR)/game
 PLYR_DIR = $(SRC_DIR)/player
-DATA_DIR = $(DATA_DIR)/data
+DATA_DIR = $(SRC_DIR)/data
 
 INC_DIR = includes/
 OBJ_DIR = obj/
@@ -41,14 +41,16 @@ DATA_FILES = 	data.c image.c
 
 OBJ_FILES = $(MAIN_FILES:%.c=$(OBJ_DIR)%.o) \
 			$(GAME_FILES:%.c=$(OBJ_DIR)%.o) \
-			$(PLYR_FILES:%.c=$(OBJ_DIR)%.o)
+			$(PLYR_FILES:%.c=$(OBJ_DIR)%.o)	\
+			$(DATA_FILES:%.c=$(OBJ_DIR)%.o)
 
 LIB_FILES = -L$(LIBFT_DIR) -lft -Llibraries/42_libft -lmlx -Llibraries/mlx -framework OpenGL -framework AppKit
 
 VPATH =	$(SRC_DIR) 		\
 		$(MAIN_DIR)		\
 		$(GAME_DIR)		\
-		$(PLYR_DIR)
+		$(PLYR_DIR)		\
+		$(DATA_DIR)
 
 # Build rule
 all: $(NAME)
