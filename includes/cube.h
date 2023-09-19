@@ -6,7 +6,7 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:21:48 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/19 13:04:26 by smayrand         ###   ########.fr       */
+/*   Updated: 2023/09/19 13:31:37 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdio.h>
 # include "../libraries/42_libft/include/libft.h"
+# include "./MLX42/include/MLX42/MLX42.h"
 
 # define mapWidth 24
 # define mapHeight 24
