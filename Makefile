@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+         #
+#    By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 04:45:18 by jbernard          #+#    #+#              #
-#    Updated: 2023/09/19 11:15:17 by jbernard         ###   ########.fr        #
+#    Updated: 2023/09/19 13:18:02 by smayrand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,8 @@ include settings.mk
 CC = clang
 CFLAGS = -Wall -Wextra -Werror
 NAME = Cube3D
+LIBMLX = ./includes/MLX42
+HEADERS	= -I ./include -I $(LIBMLX)/include
 
 # Directories
 SRC_DIR = src/
@@ -36,7 +38,7 @@ LIBFT_DIR = ./libraries/42_libft
 MAIN_FILES = 	main.c
 GAME_FILES =	game.c exit.c read_map.c
 PLYR_FILES = 	player.c key_hook.c
-DATA_FILES = 	data.c image.c
+DATA_FILES = 	frame.c image.c
 				
 
 OBJ_FILES = $(MAIN_FILES:%.c=$(OBJ_DIR)%.o) \
@@ -44,7 +46,7 @@ OBJ_FILES = $(MAIN_FILES:%.c=$(OBJ_DIR)%.o) \
 			$(PLYR_FILES:%.c=$(OBJ_DIR)%.o)	\
 			$(DATA_FILES:%.c=$(OBJ_DIR)%.o)
 
-LIB_FILES = -L$(LIBFT_DIR) -lft -Llibraries/42_libft -lmlx -Llibraries/mlx -framework OpenGL -framework AppKit
+LIB_FILES = -L$(LIBFT_DIR) -lft -Llibraries/42_libft $(LIBMLX)/build/libmlx42.a -ldl -framework OpenGL -lglfw -L"/Users/$(USER)/.brew/opt/glfw/lib/" -pthread -lm
 
 VPATH =	$(SRC_DIR) 		\
 		$(MAIN_DIR)		\
@@ -55,15 +57,18 @@ VPATH =	$(SRC_DIR) 		\
 # Build rule
 all: $(NAME)
 
+libmlx:
+	@cmake $(LIBMLX) -B $(LIBMLX)/build && make -C $(LIBMLX)/build -j4
+
 $(NAME): $(OBJ_FILES)
 	@ printf "$(GREEN) Almost done ......\r$(RESET)"
 	@ $(MAKE) -C $(LIBFT_DIR)
-	@ $(CC) $(CFLAGS) $(OBJ_FILES) $(LIB_FILES) -o $(NAME)
+	@ $(CC) $(CFLAGS) $(OBJ_FILES) $(LIB_FILES) $(HEADERS) -o $(NAME)
 	@ printf "$(GREEN) - ✅✅✅ -> Compilation of $(PURPLE)$(NAME)$(GREEN) complete!                      						      $(RESET)\n"
 
 $(OBJ_DIR)%.o: %.c | $(OBJ_DIR)
 	@ printf "$(GREEN)- ⚡⚡⚡ -> Compiling $(PURPLE)$(notdir $@)$(GREEN) using $(PURPLE)$(notdir $<)$(GREEN)...                                                                             \r$(RESET)"
-	@ $(CC) $(CFLAGS) -g -gdwarf-4 -I$(INC_DIR) -c $< -o $@
+	@ $(CC) $(CFLAGS) -g -gdwarf-4 -I$(INC_DIR) -c $< -o $@ $(HEADERS)
 
 obj:
 	@ mkdir -p $(OBJ_DIR)
@@ -72,6 +77,7 @@ obj:
 clean:
 	@ rm -rf $(OBJ_DIR)
 	@ $(MAKE) -C $(LIBFT_DIR) clean
+	@rm -rf $(LIBMLX)/build
 
 fclean: clean
 	@ rm -f $(NAME)
@@ -79,4 +85,4 @@ fclean: clean
 
 re: clean all
 
-.PHONY:		all clean fclean re obj
+.PHONY:		all clean fclean re obj libmlx
