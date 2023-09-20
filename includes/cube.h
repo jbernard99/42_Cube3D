@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:21:48 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/20 13:24:10 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/20 13:43:40 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,18 +57,17 @@ typedef struct s_settings {
 	int			strt_posy
 }	t_settings;
 
-typedef struct s_frame {
-	void		*img;
-	char		*addr;
+typedef struct s_mlx {
+	mlx_t			*mlx;
+	mlx_image_t		*img;
+	char			*addr;
 	t_settings 	*s;
-}	t_frame;
+}	t_mlx;
  
 typedef struct s_game{
 	t_player	*player;
 	t_settings	*s;
-	t_frame		*curr_frame;
-	t_frame		*pre_frames[4];
-	void		*mlx;
+	t_mlx		*mlx;
 	void		*screen;
 	int			is_playing;
 	double		time;
