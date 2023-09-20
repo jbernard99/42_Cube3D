@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   game.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 21:25:17 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/19 13:19:01 by smayrand         ###   ########.fr       */
+/*   Updated: 2023/09/20 14:15:36 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cube.h"
 
+
+/**
 void	init_game_frames(t_game *game)
 {
 	int	i;
@@ -27,16 +29,19 @@ void	init_game_frames(t_game *game)
 	}
 }
 
-t_game *init_game(t_game *game, void *screen, void *mlx)
+*/
+
+
+t_game init_game(t_settings *settings)
 {
-	game = ft_calloc(1, sizeof(t_game));
-	game->player = init_player(game->player);
-	game->mlx = mlx;
-	init_game_frames(game);
-	game->screen = screen;
-	game->is_playing = 0;
-	game->old_time = 0;
-	game->time = 0;
+	t_game	game;
+
+	game.player = init_player(game.player);
+	game.mlx = mlx_init(settings->scrn_w, settings->scrn_h, "Forza Horizon 6", true);
+	game.s = settings;
+	game.is_playing = 0;
+	game.old_time = 0;
+	game.time = 0;
 
 	return (game);
 }

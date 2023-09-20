@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:21:48 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/20 13:54:26 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/20 14:12:47 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,13 +81,10 @@ void		validate_ext(char *file);
 void		extract_file(char **argv, t_game *game);
 
 // game.c
-t_game		*init_game(t_game *game, void *screen, void *mlx);
+t_game		init_game(t_settings *settings);
 
 // player.c
 t_player	*init_player(t_player *player);
-
-// frame.c
-t_frame 	*init_frame(t_game *game, t_frame *frame, void *mlx);
 
 // key_hook.c
 void		key_hook(mlx_key_data_t keycode, void *input);
