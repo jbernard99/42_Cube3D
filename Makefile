@@ -6,7 +6,7 @@
 #    By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 04:45:18 by jbernard          #+#    #+#              #
-#    Updated: 2023/09/19 13:50:59 by smayrand         ###   ########.fr        #
+#    Updated: 2023/09/20 13:21:24 by smayrand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ MAIN_DIR = $(SRC_DIR)/main
 GAME_DIR = $(SRC_DIR)/game
 PLYR_DIR = $(SRC_DIR)/player
 DATA_DIR = $(SRC_DIR)/data
+GNL_DIR = $(SRC_DIR)/gnl
 
 INC_DIR = includes/
 OBJ_DIR = obj/
@@ -36,15 +37,17 @@ LIBFT_DIR = ./libraries/42_libft
 
 # Files
 MAIN_FILES = 	main.c
-GAME_FILES =	game.c exit.c read_map.c
+GAME_FILES =	game.c exit.c read_map.c validate_ext.c
 PLYR_FILES = 	player.c key_hook.c
 DATA_FILES = 	frame.c image.c
+GNL_FILES = 	get_next_line.c get_next_line_utils.c
 				
 
 OBJ_FILES = $(MAIN_FILES:%.c=$(OBJ_DIR)%.o) \
 			$(GAME_FILES:%.c=$(OBJ_DIR)%.o) \
 			$(PLYR_FILES:%.c=$(OBJ_DIR)%.o)	\
-			$(DATA_FILES:%.c=$(OBJ_DIR)%.o)
+			$(DATA_FILES:%.c=$(OBJ_DIR)%.o) \
+			$(GNL_FILES:%.c=$(OBJ_DIR)%.o)
 
 LIB_FILES = -L$(LIBFT_DIR) -lft -Llibraries/42_libft $(LIBMLX)/build/libmlx42.a -ldl -framework OpenGL -lglfw -L"/Users/$(USER)/.brew/opt/glfw/lib/" -pthread -lm
 
@@ -52,7 +55,8 @@ VPATH =	$(SRC_DIR) 		\
 		$(MAIN_DIR)		\
 		$(GAME_DIR)		\
 		$(PLYR_DIR)		\
-		$(DATA_DIR)
+		$(DATA_DIR)		\
+		$(GNL_DIR)
 
 # Build rule
 all: $(NAME)

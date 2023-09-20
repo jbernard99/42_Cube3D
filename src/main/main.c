@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:29:04 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/20 13:39:14 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/20 13:45:34 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,20 @@ int main(int argc, char **argv)
 	t_game		game;
 
 	settings = init_settings();
-	if (argc != 2)
+	printf("ARGC: %d\n", argc);
+	printf("ARGV[2]: %s\n", argv[1]);
+	if (argc == 2)
 	{
+		validate_ext(argv[1]);
+		extract_file(&argv[1], &game);
 		game.mlx = mlx_init(sW, sH, "Forza Horizon 6", true);
 //		game.screen = mlx_new_window(game.mlx, sW, sH, "Forza Horizon 6");
 //		init_game(&game, game.screen, game.mlx);
 //		mlx_key_hook(game.screen, 2, 1L << 0, key_hook, &game);
 //		mlx_key_hook(game.screen, ON_DESTROY, 0, ft_exit, &game);
-		mlx_key_hook(game.mlx, &key_hook, NULL);
+		mlx_key_hook(game.mlx, &key_hook, &game);
 		mlx_loop(game.mlx);
-		printf("%s\n", "Game Closed");
+		printf("\n%s\n", "Game Closed");
 		mlx_terminate(game.mlx);
 		return (EXIT_SUCCESS);
 	}

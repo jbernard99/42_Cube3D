@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:21:48 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/20 13:43:40 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/20 13:54:26 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 # define CUBE_H
 
 # include <stdio.h>
+# include <fcntl.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <limits.h>
 # include "../libraries/42_libft/include/libft.h"
 # include "./MLX42/include/MLX42/MLX42.h"
 
@@ -54,28 +58,27 @@ typedef struct s_settings {
 	int			scrn_h;
 	int			scrn_w;
 	int			strt_posx;
-	int			strt_posy
+	int			strt_posy;
 }	t_settings;
-
-typedef struct s_mlx {
-	mlx_t			*mlx;
-	mlx_image_t		*img;
-	char			*addr;
-	t_settings 	*s;
-}	t_mlx;
  
 typedef struct s_game{
-	t_player	*player;
-	t_settings	*s;
-	t_mlx		*mlx;
-	void		*screen;
-	int			is_playing;
-	double		time;
-	double		old_time;
+	t_player		*player;
+	mlx_t			*mlx;
+	mlx_image_t		*img;
+	int				is_playing;
+	double			time;
+	double			old_time;
+	t_settings		*s;
 }	t_game;
 
 // exit.c
 int			ft_exit(t_game *input, char *msg);
+
+//validate_ext.c
+void		validate_ext(char *file);
+
+//read_map.c
+void		extract_file(char **argv, t_game *game);
 
 // game.c
 t_game		*init_game(t_game *game, void *screen, void *mlx);
@@ -88,5 +91,14 @@ t_frame 	*init_frame(t_game *game, t_frame *frame, void *mlx);
 
 // key_hook.c
 void		key_hook(mlx_key_data_t keycode, void *input);
+
+// get_next_line_utils.c
+char		*get_next_line(int fd);
+char		*ft_strjoin(char const *s1, char const *s2);
+char		*ft_strchr(const char *hay, int needle);
+void		ft_bzero(void *s, size_t n);
+void		*ft_calloc(size_t count, size_t size);
+size_t		ft_strlen(const char *str);
+
 
 #endif
