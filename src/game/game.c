@@ -6,14 +6,13 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 21:25:17 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/20 14:15:36 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/20 14:17:17 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cube.h"
 
-
-/**
+/*
 void	init_game_frames(t_game *game)
 {
 	int	i;
@@ -28,9 +27,7 @@ void	init_game_frames(t_game *game)
 		i++;
 	}
 }
-
 */
-
 
 t_game init_game(t_settings *settings)
 {

@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:21:48 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/20 14:12:47 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/20 14:21:04 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <limits.h>
 # include "../libraries/42_libft/include/libft.h"
 # include "./MLX42/include/MLX42/MLX42.h"
+
+# define BUFFER_SIZE 100
 
 enum {
 	KEY_UP = 126,

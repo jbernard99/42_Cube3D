@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:29:04 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/20 14:14:00 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/20 14:22:36 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,14 @@ int main(int argc, char **argv)
 	t_settings	settings;
 	t_game		game;
 
-	settings = init_settings();
-	game = init_game(&settings);
 	printf("ARGC: %d\n", argc);
 	printf("ARGV[2]: %s\n", argv[1]);
 	if (argc == 2)
 	{
 		validate_ext(argv[1]);
 		extract_file(&argv[1], &game);
+		settings = init_settings();
+		game = init_game(&settings);
 		mlx_key_hook(game.mlx, &key_hook, &game);
 		mlx_loop(game.mlx);
 		printf("\n%s\n", "Game Closed");
