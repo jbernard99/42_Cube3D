@@ -6,7 +6,7 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 17:25:22 by smayrand          #+#    #+#             */
-/*   Updated: 2023/09/18 17:45:39 by smayrand         ###   ########.fr       */
+/*   Updated: 2023/09/20 12:41:17 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	validate_ext(char *file)
 	{
 		if (file[i] != ext[j] || (i - 5) <= 0)
 		{
-			printf("%s", "Error\nWrong map extention\n");
+			printf("%s", "Error: Wrong map extention\n");
 			exit (0);
 		}
 		i++;
