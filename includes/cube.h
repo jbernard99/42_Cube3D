@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:21:48 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/19 14:37:37 by smayrand         ###   ########.fr       */
+/*   Updated: 2023/09/20 13:24:10 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,6 @@
 # include <stdio.h>
 # include "../libraries/42_libft/include/libft.h"
 # include "./MLX42/include/MLX42/MLX42.h"
-
-# define mapWidth 24
-# define mapHeight 24
-# define sW 640
-# define sH 480
-
-# define startPosX 13
-# define startPosY 13
 
 enum {
 	KEY_UP = 126,
@@ -57,10 +49,12 @@ typedef struct s_player{
 }	t_player;
 
 typedef struct s_settings {
-	int			bits_per_pixel;
-	int			line_length;
-	int			endian;
-	int			offset;
+	int			map_w;
+	int			map_h;
+	int			scrn_h;
+	int			scrn_w;
+	int			strt_posx;
+	int			strt_posy
 }	t_settings;
 
 typedef struct s_frame {
