@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:21:48 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/20 13:20:47 by smayrand         ###   ########.fr       */
+/*   Updated: 2023/09/20 14:12:47 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,6 @@
 # include <limits.h>
 # include "../libraries/42_libft/include/libft.h"
 # include "./MLX42/include/MLX42/MLX42.h"
-
-# define mapWidth 24
-# define mapHeight 24
-# define sW 640
-# define sH 480
-
-# define BUFFER_SIZE 	100
-
-# define startPosX 13
-# define startPosY 13
 
 enum {
 	KEY_UP = 126,
@@ -63,28 +53,22 @@ typedef struct s_player{
 }	t_player;
 
 typedef struct s_settings {
-	int			bits_per_pixel;
-	int			line_length;
-	int			endian;
-	int			offset;
+	int			map_w;
+	int			map_h;
+	int			scrn_h;
+	int			scrn_w;
+	int			strt_posx;
+	int			strt_posy;
 }	t_settings;
-
-typedef struct s_frame {
-	void		*img;
-	char		*addr;
-	t_settings 	*s;
-}	t_frame;
  
 typedef struct s_game{
-	t_player	*player;
-	t_settings	*s;
-	t_frame		*curr_frame;
-	t_frame		*pre_frames[4];
-	void		*mlx;
-	void		*screen;
-	int			is_playing;
-	double		time;
-	double		old_time;
+	t_player		*player;
+	mlx_t			*mlx;
+	mlx_image_t		*img;
+	int				is_playing;
+	double			time;
+	double			old_time;
+	t_settings		*s;
 }	t_game;
 
 // exit.c
@@ -97,13 +81,10 @@ void		validate_ext(char *file);
 void		extract_file(char **argv, t_game *game);
 
 // game.c
-t_game		*init_game(t_game *game, void *screen, void *mlx);
+t_game		init_game(t_settings *settings);
 
 // player.c
 t_player	*init_player(t_player *player);
-
-// frame.c
-t_frame 	*init_frame(t_game *game, t_frame *frame, void *mlx);
 
 // key_hook.c
 void		key_hook(mlx_key_data_t keycode, void *input);
