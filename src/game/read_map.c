@@ -6,7 +6,7 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 17:08:27 by smayrand          #+#    #+#             */
-/*   Updated: 2023/09/20 13:42:35 by smayrand         ###   ########.fr       */
+/*   Updated: 2023/09/21 13:59:28 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ game->is_playing = 0; // temporary just to let te program compile MUST REMOVE!
 	{
 		printf("%s", temp);
 		temp = get_next_line(fd);
+
 	}
 }
