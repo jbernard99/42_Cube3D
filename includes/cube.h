@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:21:48 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/21 12:40:00 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/21 14:50:53 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,16 @@ typedef struct s_player{
 	double		speed;
 }	t_player;
 
+typedef struct s_map {
+	int		**map;
+	char	*no;
+	char	*so;
+	char	*ea;
+	char	*we;
+	char	*f;
+	char	*c;
+}	t_map;
+
 typedef struct s_settings {
 	int			map_w;
 	int			map_h;
@@ -72,6 +82,7 @@ typedef struct s_game{
 	double			time;
 	double			old_time;
 	t_settings		*s;
+	t_map			m;
 }	t_game;
 
 

@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:29:04 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/21 13:39:36 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/21 14:34:58 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ int otherfunc(t_game *game, int x, int y)
 			return (4);
 	}
 }
+
+
 
 int	paint_screen(t_game *game)
 {
