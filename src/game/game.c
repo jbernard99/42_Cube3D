@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 21:25:17 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/21 11:00:11 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/21 12:15:03 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_game init_game(t_settings *s)
 	t_game	game;
 
 	game.player = init_player(s);
-	game.mlx = mlx_init(s->scrn_w, s->scrn_h, "Forza Horizon 6", true);
+	game.mlx = mlx_init(s->scrn_w, s->scrn_h, "Forza Horizon 6", false);
 	game.img = mlx_new_image(game.mlx, s->scrn_w, s->scrn_h);
 	game.s = s;
 	game.is_playing = 0;

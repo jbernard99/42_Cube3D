@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:29:04 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/21 11:03:33 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/21 12:26:37 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,24 +32,25 @@ t_settings init_settings()
 	return (settings);
 }
 
-void paint_screen(t_game *game)
+int	paint_screen(t_game *game)
 {
 	uint32_t	rgba;
-	int w;
-	int h;
+	uint32_t 	h;
+	uint32_t 	w;
 
-	rgba = get_rgba(100, 1, 175, 1);
+	rgba = get_rgba(150, 1, 175, 255);
 	h = 0;
-	while (h < game->s->scrn_h)
+	while (h < (uint32_t)game->s->scrn_h)
 	{
 		w = 0;
-		while (w < game->s->scrn_w)
+		while (w < (uint32_t)game->s->scrn_w)
 		{
 			mlx_put_pixel(game->img, w, h, (uint32_t)rgba);
 			w++;
 		}
 		h++;
 	}
+	return ((int)mlx_image_to_window(game->mlx, game->img, 0, 0));
 }
 
 static void ft_hook(void *param)
@@ -57,6 +58,9 @@ static void ft_hook(void *param)
 	t_game *game;
 
 	game = param;
+	game->time += 1;
+	if (paint_screen(game) < 0)
+			printf("Error with game.img\n");
 }
 
 int main(int argc, char **argv)
@@ -76,9 +80,7 @@ int main(int argc, char **argv)
 		
 		// ---- //
 
-		paint_screen(&game);
-		if (mlx_image_to_window(game.mlx, game.img, 0, 0) < 0)
-			printf("Error with game.img\n");
+		
 
 		// ---- //
 		
