@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:21:48 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/21 12:19:48 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/21 12:40:00 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ typedef struct s_player{
 typedef struct s_settings {
 	int			map_w;
 	int			map_h;
+	int			map_r;
 	int			scrn_h;
 	int			scrn_w;
 	int			strt_posx;
