@@ -19,9 +19,9 @@ t_player init_player(t_settings *s)
 	plyr.pos[0] = s->strt_posx;
 	plyr.pos[1] = s->strt_posy;
 	plyr.dir[0] = 0;
-	plyr.dir[0] = 0;
+	plyr.dir[1] = 0;
 	plyr.plane[0] = 0;
-	plyr.plane[0] = 0;
+	plyr.plane[1] = 0;
 
 	return (plyr);
 }

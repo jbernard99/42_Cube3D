@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   read_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 17:08:27 by smayrand          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2023/09/21 13:59:28 by smayrand         ###   ########.fr       */
+=======
+/*   Updated: 2023/09/21 13:59:00 by jbernard         ###   ########.fr       */
+>>>>>>> ef4282c0af06560bb68490106211edfd94fd2ae1
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +22,22 @@ void	extract_file(char **argv, t_game *game)
 	char	*temp;
 	int		fd;
 
-game->is_playing = 0; // temporary just to let te program compile MUST REMOVE!
+game->is_playing = 0; // temporary just to let the program compile MUST REMOVE!
 	fd = open(argv[0], O_RDONLY);
 	temp = get_next_line(fd);
 	while (temp != NULL)
 	{
 		printf("%s", temp);
 		temp = get_next_line(fd);
+<<<<<<< HEAD
 
+=======
+		if (temp && ft_strnstr(temp, "NO", 2) != 0)
+		else if (temp && ft_strnstr(temp, "SO", 2) != 0)
+		else if (temp && ft_strnstr(temp, "EA", 2) != 0)
+		else if (temp && ft_strnstr(temp, "WE", 2) != 0)
+		
+			printf("This is NO texture : %s\n", temp);
+>>>>>>> ef4282c0af06560bb68490106211edfd94fd2ae1
 	}
 }
