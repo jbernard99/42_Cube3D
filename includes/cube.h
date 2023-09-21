@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:21:48 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/20 14:21:04 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/21 09:56:14 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ typedef struct s_settings {
 }	t_settings;
  
 typedef struct s_game{
-	t_player		*player;
+	t_player		player;
 	mlx_t			*mlx;
 	mlx_image_t		*img;
 	int				is_playing;
@@ -73,20 +73,25 @@ typedef struct s_game{
 	t_settings		*s;
 }	t_game;
 
-// exit.c
-int			ft_exit(t_game *input, char *msg);
 
-//validate_ext.c
+// validate_ext.c
 void		validate_ext(char *file);
 
-//read_map.c
+// read_map.c
 void		extract_file(char **argv, t_game *game);
 
 // game.c
-t_game		init_game(t_settings *settings);
+t_game		init_game(t_settings *s);
 
 // player.c
-t_player	*init_player(t_player *player);
+t_player	init_player(t_settings *s);
+
+// colors.c
+int get_rgba(int r, int g, int b, int a);
+int get_r(int rgba);
+int get_g(int rgba);
+int get_b(int rgba);
+int get_a(int rgba);
 
 // key_hook.c
 void		key_hook(mlx_key_data_t keycode, void *input);
@@ -99,5 +104,7 @@ void		ft_bzero(void *s, size_t n);
 void		*ft_calloc(size_t count, size_t size);
 size_t		ft_strlen(const char *str);
 
+// exit.c
+int			ft_exit(t_game *input, char *msg);
 
 #endif

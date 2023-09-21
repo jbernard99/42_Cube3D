@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   player.c                                           :+:      :+:    :+:   */
+/*   plyr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 21:24:28 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/18 16:50:46 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/21 09:53:35 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cube.h"
 
-t_player *init_player(t_player *player)
+t_player init_player(t_settings *s)
 {
-	player = ft_calloc(1, sizeof(t_player));
-	player->pos[0] = startPosX;
-	player->pos[1] = startPosY;
-	player->dir[0] = 0;
-	player->dir[0] = 0;
-	player->plane[0] = 0;
-	player->plane[0] = 0;
+	t_player	plyr;
+	
+	plyr.pos[0] = s->strt_posx;
+	plyr.pos[1] = s->strt_posy;
+	plyr.dir[0] = 0;
+	plyr.dir[0] = 0;
+	plyr.plane[0] = 0;
+	plyr.plane[0] = 0;
 
-	return (player);
+	return (plyr);
 }

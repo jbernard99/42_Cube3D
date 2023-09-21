@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+         #
+#    By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 04:45:18 by jbernard          #+#    #+#              #
-#    Updated: 2023/09/20 13:21:24 by smayrand         ###   ########.fr        #
+#    Updated: 2023/09/21 09:36:41 by jbernard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,9 +37,8 @@ LIBFT_DIR = ./libraries/42_libft
 
 # Files
 MAIN_FILES = 	main.c
-GAME_FILES =	game.c exit.c read_map.c validate_ext.c
+GAME_FILES =	game.c exit.c read_map.c validate_ext.c colors.c
 PLYR_FILES = 	player.c key_hook.c
-DATA_FILES = 	frame.c image.c
 GNL_FILES = 	get_next_line.c get_next_line_utils.c
 				
 
