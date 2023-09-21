@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:29:04 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/21 12:26:37 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/21 13:39:36 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,29 +22,63 @@ t_settings init_settings()
 {
 	t_settings settings;
 	
-	settings.map_w = 24;
-	settings.map_h = 24;
-	settings.scrn_w = 640;
-	settings.scrn_h = 480;
+	settings.map_w = 22; //Max map width = 36
+	settings.map_h = 36;
+	settings.scrn_w = settings.map_w * 30;
+	settings.scrn_h = settings.map_h * 30;
+	settings.map_r = settings.scrn_w / settings.map_w;
 	settings.strt_posx = 13;
 	settings.strt_posy = 13;
 
 	return (settings);
 }
 
+int otherfunc(t_game *game, int x, int y)
+{
+	int mapsqrx;
+	int mapsqry;
+
+	mapsqrx = x / game->s->map_r;
+	mapsqry = y / game->s->map_r;
+	
+	if (mapsqry % 2 == 0)
+	{
+		if (mapsqrx % 2 == 0)
+			return (1);
+		else
+			return (2);
+	}
+	else
+	{
+		if (mapsqrx % 2 == 0)
+			return (3);
+		else
+			return (4);
+	}
+}
+
 int	paint_screen(t_game *game)
 {
 	uint32_t	rgba;
+	int			x;
 	uint32_t 	h;
 	uint32_t 	w;
 
-	rgba = get_rgba(150, 1, 175, 255);
 	h = 0;
 	while (h < (uint32_t)game->s->scrn_h)
 	{
 		w = 0;
 		while (w < (uint32_t)game->s->scrn_w)
 		{
+			x = otherfunc(game, w, h);
+			if (x == 1)
+				rgba = get_rgba(0, 0, 255, 255);
+			else if (x == 2)
+				rgba = get_rgba(0, 255, 0, 255);
+			else if (x == 3)
+				rgba = get_rgba(255, 0, 0, 255);
+			else
+				rgba = get_rgba(125, 0, 175, 255);
 			mlx_put_pixel(game->img, w, h, (uint32_t)rgba);
 			w++;
 		}
@@ -80,7 +114,7 @@ int main(int argc, char **argv)
 		
 		// ---- //
 
-		
+
 
 		// ---- //
 		
