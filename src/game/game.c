@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 21:25:17 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/22 11:24:40 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/22 11:26:14 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int **init_map(int map_h)
 
 void add_line(t_game *game, char *temp, int y)
 {
-	int *line;
+//	int *line;
 
 	game->m.map[y] = ft_calloc(ft_strlen(temp), sizeof(int));
 	
