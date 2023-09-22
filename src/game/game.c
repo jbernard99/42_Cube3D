@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 21:25:17 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/22 11:39:55 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/22 11:59:55 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,8 @@ void add_line(t_game *game, char *temp, int y)
 	while (temp[i] != '\0')
 	{
 		game->m.map[y][i] = temp[i];
-		if (game)
 		i++;
 	}
-	game
-	game->m.map[y]
 }
 
 t_game init_game(t_settings *s)

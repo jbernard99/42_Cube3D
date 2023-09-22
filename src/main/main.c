@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:29:04 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/21 14:34:58 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/22 12:25:48 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ t_settings init_settings()
 {
 	t_settings settings;
 	
-	settings.map_w = 22; //Max map width = 36
-	settings.map_h = 36;
+	settings.map_w = 16; //Max map width = 36
+	settings.map_h = 16;
 	settings.scrn_w = settings.map_w * 30;
 	settings.scrn_h = settings.map_h * 30;
 	settings.map_r = settings.scrn_w / settings.map_w;
