@@ -1,11 +1,11 @@
 
-NO	./textures/north.xpm
+NO	./textures/bricks.png
 
-SO	 ./textures/south.xpm
+SO	 ./textures/rockwall.png
 
-WE	  ./textures/west.xpm
+WE	  ./textures/woodplanks.png
 
-EA	 ./textures/east.xpm
+EA	 ./textures/woodplanks2.png
 
 F 0,0,255
 

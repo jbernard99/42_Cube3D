@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 17:08:27 by smayrand          #+#    #+#             */
-/*   Updated: 2023/09/25 13:19:31 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/25 13:26:19 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,8 @@ void	extract_file(char **argv, t_settings *s)
 	while (temp != NULL)
 	{
 		printf("%s\n", temp);	
-		//write(1, "1\n", 2);
 		if (temp[0] == '1')
 		{
-			write(1, "2\n", 2);
 			gather_map(s, temp);
 		}
 		else if (ft_strnstr(temp, "NO", 2) != 0)
@@ -83,9 +81,8 @@ void	extract_file(char **argv, t_settings *s)
 			s->m.f = trim_path(temp);
 		temp = get_next_line(fd);
 	}
-	write(1, "3\n", 2);
-	printf("*%d*\n", s->map_h);
-	printf("*%s*\n", s->m.temp);
+//	printf("*%d*\n", s->map_h);
+	printf("*\n%s*\n", s->m.temp);
 
 	/*
 	printf("\n%s\n", s->m->no);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:29:04 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/25 13:20:44 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/25 13:28:46 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,7 @@ static void	ft_hook(void *param)
 	t_game *game;
 
 	game = param;
-	game->time += 1;
-	if (paint_screen(game) < 0)
-			printf("Error with game.img\n");
+//	game->time += 1;
 }
 
 int	main(int argc, char **argv)
@@ -119,7 +117,6 @@ int	main(int argc, char **argv)
 
 
 		// ---- //
-		
 		mlx_loop_hook(game.mlx, ft_hook, (void*)&game);
 		mlx_loop(game.mlx);
 		printf("Game Closed after %f ft_hook ticks\n", game.time);
