@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:29:04 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/25 13:27:39 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/25 15:27:42 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	paint_screen(t_game *game)
 			x = otherfunc(game, w, h);
 			if (x == 1)
 				rgba = get_rgba(0, 0, 255, 255);
-			else if (x == 2)
+			else if (x == 2)	
 				rgba = get_rgba(0, 255, 0, 255);
 			else if (x == 3)
 				rgba = get_rgba(255, 0, 0, 255);
@@ -106,10 +106,9 @@ int	main(int argc, char **argv)
 		validate_ext(argv[1]);
 		settings = init_settings();
 		extract_file(&argv[1], &settings);
-		write(1, "game\n", 5);
 		game = init_game(&settings);
-		write(1, "out\n", 4);
 		mlx_key_hook(game.mlx, &key_hook, &game);
+
 		
 		// ---- //
 
@@ -117,9 +116,7 @@ int	main(int argc, char **argv)
 
 		// ---- //
 		
-		write(1, "hook\n", 5);
 		mlx_loop_hook(game.mlx, ft_hook, (void*)&game);
-		write(1, "out\n", 4);
 		mlx_loop(game.mlx);
 		//printf("Game Closed after %f ft_hook ticks\n", game.time);
 		mlx_terminate(game.mlx);
