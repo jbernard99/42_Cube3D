@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:21:48 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/25 13:27:12 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/25 15:03:37 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ typedef struct s_map {
 	char	*f;
 	char	*c;
 	char	*temp;
+	int		p_flag;
 }	t_map;
 
 typedef struct s_settings {
