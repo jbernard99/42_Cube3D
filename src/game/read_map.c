@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 17:08:27 by smayrand          #+#    #+#             */
-/*   Updated: 2023/09/22 13:26:01 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/25 12:43:48 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,10 @@ char	*trim_path(char *line)
 	return (ft_strdup(&line[i]));
 }
 
+void	gather_map(char *line)
+{
+	
+}
 
 void	extract_file(char **argv, t_game *game)
 {
@@ -57,25 +61,22 @@ void	extract_file(char **argv, t_game *game)
 	temp = get_next_line(fd);
 	while (temp != NULL)
 	{
-		printf("%s\n", temp);
+		printf("%s\n", temp);	
+		if (temp[0] == '1')
+			gather_map(game);
+		else if (ft_strnstr(temp, "NO", 2) != 0)
+			game->m.no = trim_path(temp);
+		else if (ft_strnstr(temp, "SO", 2) != 0)
+			game->m.so = trim_path(temp);
+		else if (ft_strnstr(temp, "EA", 2) != 0)
+			game->m.ea = trim_path(temp);
+		else if (ft_strnstr(temp, "WE", 2) != 0)
+			game->m.we = trim_path(temp);
+		else if (ft_strnstr(temp, "C", 1) != 0)
+			game->m.c = trim_path(temp);
+		else if (ft_strnstr(temp, "F", 1) != 0)
+			game->m.f = trim_path(temp);
 		temp = get_next_line(fd);
-		if (temp != NULL)
-		{
-			if (temp[0] == '1')
-				add_line(game, temp, y++);
-			else if (ft_strnstr(temp, "NO", 2) != 0)
-				game->m->no = trim_path(temp);
-			else if (ft_strnstr(temp, "SO", 2) != 0)
-				game->m->so = trim_path(temp);
-			else if (ft_strnstr(temp, "EA", 2) != 0)
-				game->m->ea = trim_path(temp);
-			else if (ft_strnstr(temp, "WE", 2) != 0)
-				game->m->we = trim_path(temp);
-			else if (ft_strnstr(temp, "C", 1) != 0)
-				game->m->c = trim_path(temp);
-			else if (ft_strnstr(temp, "F", 1) != 0)
-				game->m->f = trim_path(temp);
-		}
 	}
 	/*
 	printf("\n%s\n", game->m->no);

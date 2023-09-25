@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:21:48 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/22 13:28:49 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/25 12:36:55 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ typedef struct s_game{
 	double			time;
 	double			old_time;
 	t_settings		*s;
-	t_map			*m;
+	t_map			m;
 }	t_game;
 
 

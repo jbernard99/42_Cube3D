@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:29:04 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/22 12:58:34 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/25 12:34:04 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ int	paint_screen(t_game *game)
 	return ((int)mlx_image_to_window(game->mlx, game->img, 0, 0));
 }
 
-static void ft_hook(void *param)
+static void	ft_hook(void *param)
 {
 	t_game *game;
 
@@ -99,7 +99,7 @@ static void ft_hook(void *param)
 			printf("Error with game.img\n");
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_settings	settings;
 	t_game		game;
