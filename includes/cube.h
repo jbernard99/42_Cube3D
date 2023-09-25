@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:21:48 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/25 12:36:55 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/25 13:12:37 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ typedef struct s_map {
 	char	*we;
 	char	*f;
 	char	*c;
+	char	*temp;
 }	t_map;
 
 typedef struct s_settings {
@@ -72,6 +73,7 @@ typedef struct s_settings {
 	int			scrn_w;
 	int			strt_posx;
 	int			strt_posy;
+	t_map		m;
 }	t_settings;
  
 typedef struct s_game{
@@ -82,7 +84,6 @@ typedef struct s_game{
 	double			time;
 	double			old_time;
 	t_settings		*s;
-	t_map			m;
 }	t_game;
 
 
@@ -90,7 +91,7 @@ typedef struct s_game{
 void		validate_ext(char *file);
 
 // read_map.c
-void		extract_file(char **argv, t_game *game);
+void		extract_file(char **argv, t_settings *s);
 
 // game.c
 t_game		init_game(t_settings *s);
