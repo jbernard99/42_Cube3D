@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:29:04 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/25 13:27:39 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/25 14:19:55 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	paint_screen(t_game *game)
 			x = otherfunc(game, w, h);
 			if (x == 1)
 				rgba = get_rgba(0, 0, 255, 255);
-			else if (x == 2)
+			else if (x == 2)	
 				rgba = get_rgba(0, 255, 0, 255);
 			else if (x == 3)
 				rgba = get_rgba(255, 0, 0, 255);
