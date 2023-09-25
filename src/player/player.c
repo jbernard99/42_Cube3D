@@ -51,5 +51,5 @@ int	find_start_pos(t_game *data)
 	if (data->s->m.p_flag != 1)
 		return (printf("\n%s\n", "Error: 0 or more than 1 player on the map"), 0);
 	else
-	return (printf("\n%s\n", "FU"),1);
+		return (printf("\n%s\n", "FU"),1);
 }

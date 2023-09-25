@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 21:25:17 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/25 15:28:49 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/25 15:53:05 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	init_map_tab(t_map *m)
 {
 	int	max_len;
-	int i;
+	int	i;
 	int	x;
 	int	y;
 
