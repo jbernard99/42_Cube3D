@@ -6,7 +6,11 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:29:04 by jbernard          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2023/09/25 13:33:38 by smayrand         ###   ########.fr       */
+=======
+/*   Updated: 2023/09/25 15:27:42 by jbernard         ###   ########.fr       */
+>>>>>>> be3adfd65b7339f6fecdaff5c737cd5afa63d2df
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +77,7 @@ int	paint_screen(t_game *game)
 			x = otherfunc(game, w, h);
 			if (x == 1)
 				rgba = get_rgba(0, 0, 255, 255);
-			else if (x == 2)
+			else if (x == 2)	
 				rgba = get_rgba(0, 255, 0, 255);
 			else if (x == 3)
 				rgba = get_rgba(255, 0, 0, 255);
@@ -108,6 +112,7 @@ int	main(int argc, char **argv)
 		extract_file(&argv[1], &settings);
 		game = init_game(&settings);
 		mlx_key_hook(game.mlx, &key_hook, &game);
+
 		
 		// ---- //
 

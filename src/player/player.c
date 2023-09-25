@@ -21,7 +21,7 @@ t_player init_player(t_settings *s)
 	plyr.dir[0] = 0;
 	plyr.dir[1] = 0;
 	plyr.plane[0] = 0;
-	plyr.plane[1] = 0;
+	plyr.plane[1] = 0.66;
 
 	return (plyr);
 }

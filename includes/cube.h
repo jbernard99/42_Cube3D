@@ -6,7 +6,11 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:21:48 by jbernard          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2023/09/25 15:03:37 by smayrand         ###   ########.fr       */
+=======
+/*   Updated: 2023/09/25 15:10:30 by jbernard         ###   ########.fr       */
+>>>>>>> be3adfd65b7339f6fecdaff5c737cd5afa63d2df
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +46,7 @@ typedef struct s_player{
 	double	pos[2];
 	double	dir[2];
 	double	plane[2];
-//Feel Free to use
+	/*
 	double		pos_x; // position of the player
 	double		pos_y; // position of the player
 	double		dir_x; // value between -1 and 1 to initialize camera facing position
@@ -52,10 +56,11 @@ typedef struct s_player{
 	char		set_dir;
 	double		angle;
 	double		speed;
+	*/
 }	t_player;
 
 typedef struct s_map {
-	int		**map;
+	char	**map;
 	char	*no;
 	char	*so;
 	char	*ea;
