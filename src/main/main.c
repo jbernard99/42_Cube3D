@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:29:04 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/22 12:58:34 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/25 13:20:44 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_settings init_settings()
 	settings.map_r = 0;
 	settings.strt_posx = 13;
 	settings.strt_posy = 13;
-
+	settings.m.temp = ft_calloc(1, sizeof(char));
 	return (settings);
 }
 
@@ -56,8 +56,6 @@ int otherfunc(t_game *game, int x, int y)
 			return (4);
 	}
 }
-
-
 
 int	paint_screen(t_game *game)
 {
@@ -89,7 +87,7 @@ int	paint_screen(t_game *game)
 	return ((int)mlx_image_to_window(game->mlx, game->img, 0, 0));
 }
 
-static void ft_hook(void *param)
+static void	ft_hook(void *param)
 {
 	t_game *game;
 
@@ -99,7 +97,7 @@ static void ft_hook(void *param)
 			printf("Error with game.img\n");
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_settings	settings;
 	t_game		game;
@@ -110,8 +108,10 @@ int main(int argc, char **argv)
 	{
 		validate_ext(argv[1]);
 		settings = init_settings();
+		extract_file(&argv[1], &settings);
+		write(1, "1\n", 2);
 		game = init_game(&settings);
-		extract_file(&argv[1], &game);
+		write(1, "2\n", 2);
 		mlx_key_hook(game.mlx, &key_hook, &game);
 		
 		// ---- //
