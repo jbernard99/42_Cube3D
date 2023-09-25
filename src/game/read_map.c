@@ -6,7 +6,7 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 17:08:27 by smayrand          #+#    #+#             */
-/*   Updated: 2023/09/25 13:26:19 by smayrand         ###   ########.fr       */
+/*   Updated: 2023/09/25 13:30:55 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,6 @@ void	extract_file(char **argv, t_settings *s)
 			s->m.f = trim_path(temp);
 		temp = get_next_line(fd);
 	}
-//	printf("*%d*\n", s->map_h);
-	printf("*\n%s*\n", s->m.temp);
 
 	/*
 	printf("\n%s\n", s->m->no);

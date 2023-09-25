@@ -6,7 +6,7 @@
 /*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:29:04 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/25 13:28:46 by smayrand         ###   ########.fr       */
+/*   Updated: 2023/09/25 13:31:05 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ t_settings init_settings()
 	
 	settings.map_w = 0; //Max map width = 36
 	settings.map_h = 0;
-	settings.scrn_w = 0;
-	settings.scrn_h = 0;
+	settings.scrn_w = 1920;
+	settings.scrn_h = 1080;
 	settings.map_r = 0;
 	settings.strt_posx = 13;
 	settings.strt_posy = 13;
@@ -92,7 +92,6 @@ static void	ft_hook(void *param)
 	t_game *game;
 
 	game = param;
-//	game->time += 1;
 }
 
 int	main(int argc, char **argv)
@@ -107,9 +106,9 @@ int	main(int argc, char **argv)
 		validate_ext(argv[1]);
 		settings = init_settings();
 		extract_file(&argv[1], &settings);
-		write(1, "1\n", 2);
+		write(1, "game\n", 5);
 		game = init_game(&settings);
-		write(1, "2\n", 2);
+		write(1, "out\n", 4);
 		mlx_key_hook(game.mlx, &key_hook, &game);
 		
 		// ---- //
@@ -117,9 +116,12 @@ int	main(int argc, char **argv)
 
 
 		// ---- //
+		
+		write(1, "hook\n", 5);
 		mlx_loop_hook(game.mlx, ft_hook, (void*)&game);
+		write(1, "out\n", 4);
 		mlx_loop(game.mlx);
-		printf("Game Closed after %f ft_hook ticks\n", game.time);
+		//printf("Game Closed after %f ft_hook ticks\n", game.time);
 		mlx_terminate(game.mlx);
 		return (EXIT_SUCCESS);
 	}
