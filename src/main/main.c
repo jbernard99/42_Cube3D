@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 14:29:04 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/25 14:19:55 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/25 15:27:42 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,10 +106,9 @@ int	main(int argc, char **argv)
 		validate_ext(argv[1]);
 		settings = init_settings();
 		extract_file(&argv[1], &settings);
-		write(1, "game\n", 5);
 		game = init_game(&settings);
-		write(1, "out\n", 4);
 		mlx_key_hook(game.mlx, &key_hook, &game);
+
 		
 		// ---- //
 
@@ -117,9 +116,7 @@ int	main(int argc, char **argv)
 
 		// ---- //
 		
-		write(1, "hook\n", 5);
 		mlx_loop_hook(game.mlx, ft_hook, (void*)&game);
-		write(1, "out\n", 4);
 		mlx_loop(game.mlx);
 		//printf("Game Closed after %f ft_hook ticks\n", game.time);
 		mlx_terminate(game.mlx);

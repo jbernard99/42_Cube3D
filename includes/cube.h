@@ -6,7 +6,7 @@
 /*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:21:48 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/25 14:22:17 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/25 15:10:30 by jbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ typedef struct s_player{
 }	t_player;
 
 typedef struct s_map {
-	int		**map;
+	char	**map;
 	char	*no;
 	char	*so;
 	char	*ea;
