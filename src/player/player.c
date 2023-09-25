@@ -25,3 +25,31 @@ t_player init_player(t_settings *s)
 
 	return (plyr);
 }
+
+int	find_start_pos(t_game *data)
+{
+	int	x;
+	int	y;
+
+	data->s->m.p_flag = 0;
+	x = 0;
+	y = 0;
+	while (data->s->m.map[y])
+	{
+		while (data->s->m.map[y][x] == '\n')
+		{
+			if (ft_strchr("NSWE", data->s->m.map[y][x]) == 0)
+			{
+				data->s->m.p_flag++;
+				data->player.pos_x = x;
+				data->player.pos_y = y;
+			}
+			x++;
+		}
+		y++;
+	}
+	if (data->s->m.p_flag != 1)
+		return (printf("\n%s\n", "Error: 0 or more than 1 player on the map"), 0);
+	else
+		return (printf("\n%s\n", "FU"),1);
+}

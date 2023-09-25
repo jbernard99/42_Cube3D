@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jbernard <jbernard@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: smayrand <smayrand@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 10:21:48 by jbernard          #+#    #+#             */
-/*   Updated: 2023/09/25 15:10:30 by jbernard         ###   ########.fr       */
+/*   Updated: 2023/09/25 15:49:34 by smayrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,10 @@ typedef struct s_player{
 	double	pos[2];
 	double	dir[2];
 	double	plane[2];
+	double	pos_x; // position of the player
+	double	pos_y; // position of the player
+
 	/*
-	double		pos_x; // position of the player
-	double		pos_y; // position of the player
 	double		dir_x; // value between -1 and 1 to initialize camera facing position
 	double		dir_y; // value between -1 and 1 to initialize camera facing position
 	double		plane_x; // must be equal to 0
@@ -64,6 +65,7 @@ typedef struct s_map {
 	char	*f;
 	char	*c;
 	char	*temp;
+	int		p_flag;
 }	t_map;
 
 typedef struct s_settings {
@@ -101,11 +103,11 @@ t_game		init_game(t_settings *s);
 t_player	init_player(t_settings *s);
 
 // colors.c
-int get_rgba(int r, int g, int b, int a);
-int get_r(int rgba);
-int get_g(int rgba);
-int get_b(int rgba);
-int get_a(int rgba);
+int			get_rgba(int r, int g, int b, int a);
+int			get_r(int rgba);
+int			get_g(int rgba);
+int			get_b(int rgba);
+int			get_a(int rgba);
 
 // key_hook.c
 void		key_hook(mlx_key_data_t keycode, void *input);
